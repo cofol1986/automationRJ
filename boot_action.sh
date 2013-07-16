@@ -15,6 +15,7 @@ if [ -f "$lockfile" ]; then
     apt-get install -y fio
 
     #install chef-client
+    echo "172.16.4.86 chefsvr" >> /etc/hosts 
     wget http://172.18.4.86/post/chef_10.26.0-1.ubuntu.11.04_amd64.deb
     dpkg -i chef_10.26.0-1.ubuntu.11.04_amd64.deb
     mkdir -p /etc/chef/

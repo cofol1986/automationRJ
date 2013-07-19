@@ -106,9 +106,11 @@ cloud-init      cloud-init/datasources  multiselect     NoCloud
 # Post scripts. Executes late command and disables PXE
 d-i	preseed/late_command string true && \
         cd /target; wget http://$http_server/post/static.sh;\
-	wget http://$http_server/post/boot_action.sh; \
-	chmod +x ./boot_action.sh;\
-	mv boot_action.sh etc/rc.local;\
-	chmod +x ./static.sh; chroot ./ ./static.sh && $SNIPPET('ubuntu_disable_pxe')&& \
-   	true
+        wget http://$http_server/post/boot_action.sh; \
+        chmod +x ./boot_action.sh;\
+        mv boot_action.sh etc/rc.local;\
+        chmod +x ./static.sh; chroot ./ ./static.sh && \
+true
+#   	$SNIPPET('ubuntu_disable_pxe') && \
+#   	true
 

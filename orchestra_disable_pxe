@@ -1,0 +1,1 @@
+wget "http://$http_server:$http_port/cblr/svc/op/nopxe/system/$name" -O /dev/null \

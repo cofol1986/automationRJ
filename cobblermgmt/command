@@ -1,0 +1,2 @@
+tcpdump -i eth1 -qtel broadcast and port bootpc and ! host 192.168.1.1|tee mac_list
+awk -F" " '{print $1}' mac_list |sort |uniq

@@ -3,7 +3,9 @@ lockfile="/lock.file"
 ip_chefsvr="172.18.4.86"
 ip_postfiles="172.18.4.86"
 ntp_svr=$ip_chefsvr
+logfile="/root/initial-log"
 
+{
 if [ -f "$lockfile" ]; then
     #clear http_proxy for apt
     echo > /etc/apt/apt.conf
@@ -33,7 +35,7 @@ if [ -f "$lockfile" ]; then
 #else
     #echo "lock file doesn't exit"
 fi
-
+} &> $logfile
 
 
 
